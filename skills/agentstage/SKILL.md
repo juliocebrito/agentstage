@@ -95,6 +95,7 @@ When the user changes something (switch, create, edit, reset, delete, fav, unfav
 - **Target file:** the local file if it exists, otherwise the global one. Create the global file and its folder the first time, and tell the user its path.
 - For `active_stage`, `favorites` and `hidden`, write the full effective value. For `stages` and `overrides`, write only the affected entry: never copy other global entries into the local file.
 - **Exception:** reset and delete remove the entry from both files. If that changes the global file while a local one exists, say in the confirmation that it affects every project.
+- **Global file blocked:** many agents restrict files outside the workspace. If reading or writing the global file is rejected or fails, say so in one plain line, never claim it was saved, and offer `/agentstage local` to keep this project's choices in the workspace instead.
 
 Both files hold only the user's choices, and any key may be missing:
 ```json

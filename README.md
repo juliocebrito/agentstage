@@ -58,4 +58,10 @@ Your choices (active stage, favourites, custom stages and changes to included on
 
 A project that needs its own setup can have a local `agentstage.json` at its root, created with `/agentstage local`. It starts empty and inherits everything from the global file. From then on, changes made in that project go to it, and its values win over the global ones (custom stages and changes to included ones are combined, with the local version winning on the same ID). Delete it to go back to the global settings. Add it to `.gitignore` if you don't want it in the repository. An `agentstage.json` already at a project's root from earlier versions keeps working as that project's local file.
 
+The global file lives outside your project, and some assistants block files there unless you allow it. If yours does, the assistant will tell you and offer `/agentstage local` instead. To allow it:
+
+- **OpenCode:** add `"permission": { "external_directory": "allow" }` to your `opencode.json`, or approve the prompt when it appears.
+- **Claude Code:** start it with `--add-dir ~/.config/agentstage`, or add that folder to `permissions.additionalDirectories` in your settings.
+- **Others (Cursor, GitHub Copilot…):** approve the file access when asked.
+
 A stage only changes the assistant's tone and focus: project rules, tests and confirmations still apply, and code is never written in character.
