@@ -1,6 +1,6 @@
 # AgentStage 🎭
 
-Dynamically install and switch multi-agent environments, roles, tones, and custom personas in your AI coding assistants with a single command. Switch instantly between strict technical workflows or fun pop-culture configurations (like *Automan*, *Mr. Robot*, *Pulp Fiction*, *Rick and Morty*, *Two and a Half Men*, *Futurama*, *The Avengers*, *Iron Man* or *The Big Bang Theory*).
+Dynamically install and switch multi-agent environments, roles, tones, and custom personas in your AI coding assistants with a single command. Switch instantly between strict technical workflows or fun pop-culture configurations (like *Automan*, *Mr. Robot*, *Pulp Fiction*, *Rick and Morty*, *Two and a Half Men*, *Futurama*, *The Avengers*, *Iron Man*, *The Big Bang Theory* or *The Matrix*).
 
 ## 🚀 Installation
 
@@ -31,6 +31,7 @@ npx skills add ./          # install it
 | `avengers` | The Avengers | A team review from several angles |
 | `iron_man` | Tony Stark & J.A.R.V.I.S. | Ship a Mark I that works, then upgrade it in versions |
 | `big_bang_theory` | Sheldon & Leonard | Precision and correctness, then a plain-words summary |
+| `matrix` | Morpheus | The quick answer, then what really happens under the abstractions |
 
 You can edit or delete any of them except `default`, and `/agentstage reset` brings back the original. Stages you create yourself are marked 🛠️ in the menu, included ones 📦, and modified included ones ✏️.
 
