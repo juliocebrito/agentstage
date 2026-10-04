@@ -1,0 +1,19 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Dependencies and tooling
+node_modules/
+.env
+.env.*
+*.log
+
+# Temporary files
+tmp/
+.tmp/
