@@ -48,11 +48,14 @@ You can edit or delete any of them except `default`, and `/agentstage reset` bri
 | `/agentstage fav <stage_ID>` / `/agentstage unfav <stage_ID>` | Pin a stage to the ⭐ Favorites group at the top of the menu, or unpin it |
 | `/agentstage off` | Drop the persona: same as `/agentstage default` |
 | `/agentstage current` | Show which stage is active, in one line |
+| `/agentstage local` | Give the current project its own `agentstage.json`, on top of your global choices |
 
 You can also ask in plain words ("edit the mr_robot stage", "add futurama to my favourites", "turn the persona off", "which stage is active?").
 
 `/agentstage` works in every assistant: Claude Code and OpenCode turn each skill into a slash command named after it. The shorter `/stage` is an alias that only works where your message reaches the assistant as plain text (Cursor, GitHub Copilot…): Claude Code and OpenCode reject it as an unknown command.
 
-Your choices (active stage, favourites, custom stages and changes to included ones) are saved in an `agentstage.json` file at your project's root the first time you change something. Included stages are never copied there, so updating the skill brings you new and improved ones without touching your setup. Add it to `.gitignore` if you don't want it in the repository.
+Your choices (active stage, favourites, custom stages and changes to included ones) are saved in a global file, `~/.config/agentstage/agentstage.json` (or `$XDG_CONFIG_HOME/agentstage/agentstage.json`; `%APPDATA%\agentstage\agentstage.json` on Windows), shared by all your projects. Included stages are never copied there, so updating the skill brings you new and improved ones without touching your setup.
+
+A project that needs its own setup can have a local `agentstage.json` at its root, created with `/agentstage local`. It starts empty and inherits everything from the global file. From then on, changes made in that project go to it, and its values win over the global ones (custom stages and changes to included ones are combined, with the local version winning on the same ID). Delete it to go back to the global settings. Add it to `.gitignore` if you don't want it in the repository. An `agentstage.json` already at a project's root from earlier versions keeps working as that project's local file.
 
 A stage only changes the assistant's tone and focus: project rules, tests and confirmations still apply, and code is never written in character.
