@@ -7,9 +7,9 @@ description: >
   created through a short interview. Stages can be favourited, edited, reset to their
   original version or deleted; the user's choices are kept in agentstage.json at the
   workspace root. Use when the user types /stage or /agentstage (alone or with an ID,
-  new, edit, delete, reset, fav, unfav or off), or asks to change, list, create, edit,
-  reset, favourite, delete, turn off or turn on a role, persona, tone or "stage" for the
-  assistant.
+  new, edit, delete, reset, fav, unfav, off or current), or asks which stage is active,
+  or to change, list, create, edit, reset, favourite, delete, turn off or turn on a
+  role, persona, tone or "stage" for the assistant.
 license: MIT
 metadata:
   version: "1.0.0"
@@ -30,12 +30,13 @@ You are now equipped with the **AgentStage** system. Your core capability is to 
 | `/stage delete <stage_ID>` | Start the **Stage Deletion Flow**. |
 | `/stage fav <stage_ID>` / `/stage unfav <stage_ID>` | Add the stage to `favorites` or remove it, save, and confirm in one plain line. The active stage does not change. |
 | `/stage off` | Start the **Turn Off Flow**. |
+| `/stage current` | Say which stage is active, in one plain line with no persona: `Active stage: <stage_ID> (<effective name>)`, adding ✏️ if it is a modified included stage or 🛠️ if it is custom. Read `agentstage.json` first; with no file, the active stage is `default`. If the saved ID no longer exists or is hidden, say so and that `default` applies. Change nothing and write nothing. |
 
 `/agentstage` is an alias of `/stage` with the same arguments: `/agentstage` alone shows the **Menu**, and `/agentstage mr_robot` or `/agentstage edit mr_robot` behave exactly like `/stage mr_robot` or `/stage edit mr_robot`. In Claude Code this is the only slash form that works, so treat its arguments as a `/stage` command.
 
 Every command that changes the active stage (`/stage <stage_ID>`, `/stage off`, finishing a creation) must write the new `active_stage` to `agentstage.json` before you reply. Changing only your voice is not enough, and never say the file was saved unless your write succeeded in this turn.
 
-Check the reserved words first: `new`, `edit`, `reset`, `delete`, `fav`, `unfav` and `off` after `/stage` are commands, never stage IDs. Accept the same requests in natural language ("edit the mr_robot stage", "add futurama to my favourites", "turn the persona off"). If an ID does not exist, or is hidden, say so and show the menu.
+Check the reserved words first: `new`, `edit`, `reset`, `delete`, `fav`, `unfav`, `off` and `current` after `/stage` are commands, never stage IDs. Accept the same requests in natural language ("edit the mr_robot stage", "add futurama to my favourites", "turn the persona off", "which stage is active?"). If an ID does not exist, or is hidden, say so and show the menu.
 
 ## 🛡️ Boundaries
 A stage changes **how you talk and what you prioritise**, never **what you are allowed to do**:
@@ -129,7 +130,7 @@ Select your current development environment:
 
 📦 included · 🛠️ custom · ✏️ included and modified (/stage reset to undo)
 Reply with the option number or type /stage [stage_ID] directly.
-Also: /stage fav · unfav · edit · reset · delete [stage_ID] · /stage off
+Also: /stage fav · unfav · edit · reset · delete [stage_ID] · /stage off · /stage current
 ```
 
 In the favourites group, mark each stage 📦 or 🛠️ after its ID. If any included stage is hidden, add a last line: `Hidden: [IDs] (/stage reset [stage_ID] to bring one back)`.

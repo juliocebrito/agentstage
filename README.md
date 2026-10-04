@@ -46,8 +46,9 @@ You can edit or delete any of them except `default`, and `/stage reset` brings b
 | `/stage delete <stage_ID>` | Delete a stage after confirmation (not `default`, not the active one) |
 | `/stage fav <stage_ID>` / `/stage unfav <stage_ID>` | Pin a stage to the ⭐ Favorites group at the top of the menu, or unpin it |
 | `/stage off` | Drop the persona: same as `/stage default` |
+| `/stage current` | Show which stage is active, in one line |
 
-You can also ask in plain words ("edit the mr_robot stage", "add futurama to my favourites", "turn the persona off").
+You can also ask in plain words ("edit the mr_robot stage", "add futurama to my favourites", "turn the persona off", "which stage is active?").
 
 In Claude Code, `/stage` is rejected as an unknown command: use `/agentstage` instead, with the same arguments (`/agentstage`, `/agentstage mr_robot`, `/agentstage edit mr_robot`…).
 
