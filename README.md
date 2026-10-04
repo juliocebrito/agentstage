@@ -32,25 +32,25 @@ npx skills add ./          # install it
 | `iron_man` | Tony Stark & J.A.R.V.I.S. | Ship a Mark I that works, then upgrade it in versions |
 | `big_bang_theory` | Sheldon & Leonard | Precision and correctness, then a plain-words summary |
 
-You can edit or delete any of them except `default`, and `/stage reset` brings back the original. Stages you create yourself are marked 🛠️ in the menu, included ones 📦, and modified included ones ✏️.
+You can edit or delete any of them except `default`, and `/agentstage reset` brings back the original. Stages you create yourself are marked 🛠️ in the menu, included ones 📦, and modified included ones ✏️.
 
 ## 🛠️ Usage
 
 | Command | What it does |
 |---|---|
-| `/stage` | Show the interactive menu |
-| `/stage <stage_ID>` | Switch to a stage (also turns the persona back on) |
-| `/stage new` | Create a custom stage through a 3-question interview |
-| `/stage edit <stage_ID>` | Change a stage's role, tone or focus (any stage except `default`) |
-| `/stage reset <stage_ID>` | Undo your changes to an included stage, or bring back one you deleted |
-| `/stage delete <stage_ID>` | Delete a stage after confirmation (not `default`, not the active one) |
-| `/stage fav <stage_ID>` / `/stage unfav <stage_ID>` | Pin a stage to the ⭐ Favorites group at the top of the menu, or unpin it |
-| `/stage off` | Drop the persona: same as `/stage default` |
-| `/stage current` | Show which stage is active, in one line |
+| `/agentstage` | Show the interactive menu |
+| `/agentstage <stage_ID>` | Switch to a stage (also turns the persona back on) |
+| `/agentstage new` | Create a custom stage through a 3-question interview |
+| `/agentstage edit <stage_ID>` | Change a stage's role, tone or focus (any stage except `default`) |
+| `/agentstage reset <stage_ID>` | Undo your changes to an included stage, or bring back one you deleted |
+| `/agentstage delete <stage_ID>` | Delete a stage after confirmation (not `default`, not the active one) |
+| `/agentstage fav <stage_ID>` / `/agentstage unfav <stage_ID>` | Pin a stage to the ⭐ Favorites group at the top of the menu, or unpin it |
+| `/agentstage off` | Drop the persona: same as `/agentstage default` |
+| `/agentstage current` | Show which stage is active, in one line |
 
 You can also ask in plain words ("edit the mr_robot stage", "add futurama to my favourites", "turn the persona off", "which stage is active?").
 
-In Claude Code, `/stage` is rejected as an unknown command: use `/agentstage` instead, with the same arguments (`/agentstage`, `/agentstage mr_robot`, `/agentstage edit mr_robot`…).
+`/agentstage` works in every assistant: Claude Code and OpenCode turn each skill into a slash command named after it. The shorter `/stage` is an alias that only works where your message reaches the assistant as plain text (Cursor, GitHub Copilot…): Claude Code and OpenCode reject it as an unknown command.
 
 Your choices (active stage, favourites, custom stages and changes to included ones) are saved in an `agentstage.json` file at your project's root the first time you change something. Included stages are never copied there, so updating the skill brings you new and improved ones without touching your setup. Add it to `.gitignore` if you don't want it in the repository.
 
