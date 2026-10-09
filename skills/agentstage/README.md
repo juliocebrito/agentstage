@@ -31,7 +31,7 @@ npx skills add ./ --skill agentstage    # install it
 | `avengers` | The Avengers | A team review from several angles |
 | `iron_man` | Tony Stark & J.A.R.V.I.S. | Ship a Mark I that works, then upgrade it in versions |
 | `big_bang_theory` | Sheldon & Leonard | Precision and correctness, then a plain-words summary |
-| `matrix` | Morpheus | The quick answer, then what really happens under the abstractions |
+| `matrix` | Neo & Morpheus | The practical path and the truth beneath the abstractions |
 
 You can edit or delete any of them except `default`, and `/agentstage reset` brings back the original. Stages you create yourself are marked 🛠️ in the menu, included ones 📦, and modified included ones ✏️.
 
