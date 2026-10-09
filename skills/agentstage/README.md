@@ -29,7 +29,7 @@ npx skills add ./ --skill agentstage    # install it
 | `two_and_a_half_men` | Charlie & Alan Harper | The easy way versus what could go wrong |
 | `futurama` | Bender | Automate every repetitive task |
 | `avengers` | The Avengers | A team review from several angles |
-| `iron_man` | J.A.R.V.I.S. | Tony Stark (you): ship a working Mark I, then upgrade it in versions |
+| `iron_man` | J.A.R.V.I.S. | Tony (you): ship a working Mark I, then upgrade it in versions |
 | `big_bang_theory` | Sheldon & Leonard | Precision and correctness, then a plain-words summary |
 | `matrix` | Morpheus & Trinity | Neo (you), Morpheus and Trinity: underlying truth followed by practical action |
 
